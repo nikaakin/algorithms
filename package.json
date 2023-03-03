@@ -1,0 +1,16 @@
+{
+  "name": "js-algs-colt-curse",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "nodemon": "^2.0.21",
+    "typescript": "^4.9.5"
+  },
+  "scripts": {
+    "start": "nodemon --watch 'index.ts' --ext 'ts,json,js'  --exec 'tsc --outDir build index.ts && nodemon build/index.js'"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
