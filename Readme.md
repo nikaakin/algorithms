@@ -6,7 +6,7 @@
 - run `npm start` and see your output on terminal
 
 ```
-test in index.ts by importing function and running like this:
+//test in index.ts by importing function and running like this:
 
  import { algName } from "./5-chapter/algName";
 
