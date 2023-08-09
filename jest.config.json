@@ -1,0 +1,6 @@
+{
+  "moduleDirectories": ["node_modules", "tests"],
+  "moduleNameMapper": {
+    "@/(.*)": ["<rootDir>/$1"]
+  }
+}
