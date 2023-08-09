@@ -1,4 +1,4 @@
-import { SinglyLinkedList } from "./linked-list/LinkedList";
+import { SinglyLinkedList } from "./version-0/linked-list/LinkedList";
 
 const t1 = performance.now();
 console.log(
