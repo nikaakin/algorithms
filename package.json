@@ -1,6 +1,5 @@
 {
-  "name": "js-algs-colt-curse",
-  "version": "1.0.0",
+  "name": "algorithms-data-structures",
   "description": "",
   "main": "index.js",
   "dependencies": {
