@@ -1,9 +1,7 @@
-import { SinglyLinkedList } from "@/version-0/linked-list/LinkedList";
+import { binary_search } from "@/version-1";
 
 const t1 = performance.now();
-console.log(
-  new SinglyLinkedList().unshift(10).push(2).push(3).push(3).reverse()
-);
+console.log(binary_search([2, 34, 252, 2222, 3333333333333], 253));
 const t2 = performance.now();
 
 console.log(`takes ${(t2 - t1) / 1000} seconds`);

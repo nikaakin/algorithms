@@ -1,3 +1,3 @@
-import { demo } from "@/tests";
+import { binary_search_test } from "@/tests";
 
-demo();
+binary_search_test();
