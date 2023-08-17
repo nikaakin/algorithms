@@ -1,3 +1,3 @@
-import { binary_search_test } from "@/tests";
+import { two_crystal_balls_test } from "@/tests";
 
-binary_search_test();
+two_crystal_balls_test();
