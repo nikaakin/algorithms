@@ -1,7 +1,7 @@
-import { binary_search } from "@/version-1";
+import { bubble_sort } from "@/version-1";
 
 const t1 = performance.now();
-console.log(binary_search([2, 34, 252, 2222, 3333333333333], 3333333333333));
+console.log(bubble_sort([9, 3, 7, 4, 69, 420, 42, 1]));
 const t2 = performance.now();
 
 console.log(`takes ${(t2 - t1) / 1000} seconds`);

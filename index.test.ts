@@ -1,3 +1,3 @@
-import { two_crystal_balls_test } from "@/tests";
+import { bubble_sort_test } from "@/tests";
 
-two_crystal_balls_test();
+bubble_sort_test();
