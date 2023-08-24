@@ -1,21 +1,27 @@
 interface LinkedListInterface<T> {
   print(): void;
   insertAt(item: T, index: number): void;
-  removeAt(item: T, index: number): T | undefined;
-  remove(item: T): T | undefined;
+  removeAt(index: number): T | undefined;
+  remove(): T | undefined;
   append(item: T): void;
   prepend(item: T): void;
   get(index: number): T | undefined;
+  reverse(): void;
 }
 
-export class LinkedListNode {
-  constructor(public value: number, public next: LinkedListNode | null) {}
+interface LinkedListNodeInterface<T> {
+  value: T;
+  next?: LinkedListNode<T>;
+}
+
+export class LinkedListNode<T> implements LinkedListNodeInterface<T> {
+  constructor(public value: T, public next: LinkedListNode<T> = null) {}
 }
 
 export class LinkedList<T> implements LinkedListInterface<T> {
   public length: number = 0;
 
-  constructor(public head: LinkedListNode) {
+  constructor(public head: LinkedListNode<T>) {
     this.length++;
   }
 
@@ -30,15 +36,51 @@ export class LinkedList<T> implements LinkedListInterface<T> {
   }
 
   public insertAt(item: T, index: number): void {
-    throw new Error("Method not implemented.");
+    this.length++;
+    if (!this.head) {
+      this.head = new LinkedListNode(item);
+      return;
+    }
+
+    let currentNode = this.head;
+
+    while (currentNode.next && index) {
+      index--;
+      currentNode = currentNode.next;
+    }
+
+    currentNode.next = new LinkedListNode(item, currentNode.next);
   }
 
-  public removeAt(item: T, index: number): T | undefined {
-    throw new Error("Method not implemented.");
+  public removeAt(index: number): T | undefined {
+    if (index === 0) {
+      this.remove();
+    }
+
+    let prevNode = this.head;
+    let currentNode = this.head;
+
+    while (currentNode.next && index) {
+      prevNode = currentNode;
+      currentNode = currentNode.next;
+      index--;
+    }
+
+    if (index) return undefined;
+
+    let { value } = currentNode;
+    prevNode.next = currentNode.next;
+    currentNode = null;
+
+    return value;
   }
 
-  public remove(item: T): T | undefined {
-    throw new Error("Method not implemented.");
+  public remove(): T | undefined {
+    if (!this.head) return undefined;
+
+    let { value } = this.head;
+    this.head = this.head.next;
+    return value;
   }
 
   public append(item: T): void {
@@ -49,7 +91,11 @@ export class LinkedList<T> implements LinkedListInterface<T> {
     throw new Error("Method not implemented.");
   }
 
-  get(index: number): T | undefined {
+  public get(index: number): T | undefined {
+    throw new Error("Method not implemented.");
+  }
+
+  public reverse(): void {
     throw new Error("Method not implemented.");
   }
 }
