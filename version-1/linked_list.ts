@@ -36,25 +36,33 @@ export class LinkedList<T> implements LinkedListInterface<T> {
   }
 
   public insertAt(item: T, index: number): void {
-    this.length++;
-    if (!this.head) {
-      this.head = new LinkedListNode(item);
+    if (index < 0) return undefined;
+
+    if (index === 0) {
+      this.prepend(item);
       return;
     }
 
     let currentNode = this.head;
+    let prevNode = this.head;
 
-    while (currentNode.next && index) {
+    while (currentNode && index) {
       index--;
+      prevNode = currentNode;
       currentNode = currentNode.next;
     }
 
-    currentNode.next = new LinkedListNode(item, currentNode.next);
+    if (index) return undefined;
+
+    prevNode.next = new LinkedListNode(item, currentNode);
+    this.length++;
   }
 
   public removeAt(index: number): T | undefined {
+    if (index < 0) return undefined;
     if (index === 0) {
       this.remove();
+      return;
     }
 
     let prevNode = this.head;
@@ -72,6 +80,8 @@ export class LinkedList<T> implements LinkedListInterface<T> {
     prevNode.next = currentNode.next;
     currentNode = null;
 
+    this.length--;
+
     return value;
   }
 
@@ -80,22 +90,66 @@ export class LinkedList<T> implements LinkedListInterface<T> {
 
     let { value } = this.head;
     this.head = this.head.next;
+
+    this.length--;
     return value;
   }
 
   public append(item: T): void {
-    throw new Error("Method not implemented.");
+    this.head.next = new LinkedListNode(item, this.head.next);
+    this.length++;
+
+    return;
   }
 
   public prepend(item: T): void {
-    throw new Error("Method not implemented.");
+    this.head = new LinkedListNode(item, this.head);
+    this.length++;
+
+    return;
   }
 
   public get(index: number): T | undefined {
-    throw new Error("Method not implemented.");
+    let currentNode = this.head;
+    if (index < 0) return undefined;
+
+    while (currentNode.next && index) {
+      currentNode = currentNode.next;
+      index--;
+    }
+
+    if (index) return undefined;
+
+    return currentNode.value;
   }
 
+  // public reverse(): void {
+  //   let currentNode = this.head;
+  //   let previousNode: LinkedListNode<T> | null = null;
+  //   let newHead: LinkedListNode<T> | null = null;
+
+  //   while (currentNode) {
+  //     newHead = new LinkedListNode(currentNode.value, previousNode);
+  //     previousNode = newHead;
+  //     currentNode = currentNode.next;
+  //   }
+
+  //   this.head = newHead;
+  // }
+
+  // without making: new LinkedListNode(currentNode.value, previousNode)
   public reverse(): void {
-    throw new Error("Method not implemented.");
+    let prevNode = null;
+    let nextNode = null;
+    let currentNode = this.head;
+
+    while (currentNode) {
+      nextNode = currentNode.next;
+      currentNode.next = prevNode;
+      prevNode = currentNode;
+      currentNode = nextNode;
+    }
+
+    this.head = prevNode;
   }
 }
