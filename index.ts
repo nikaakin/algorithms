@@ -10,7 +10,7 @@ const list = new LinkedList(
         new LinkedListNode(
           4,
           new LinkedListNode(
-            5,
+            2,
             new LinkedListNode(
               6,
               new LinkedListNode(

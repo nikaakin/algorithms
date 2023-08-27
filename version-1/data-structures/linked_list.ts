@@ -1,3 +1,5 @@
+import { LinkedListNode } from "@/version-1";
+
 interface LinkedListInterface<T> {
   print(): void;
   insertAt(item: T, index: number): void;
@@ -7,15 +9,6 @@ interface LinkedListInterface<T> {
   prepend(item: T): void;
   get(index: number): T | undefined;
   reverse(): void;
-}
-
-interface LinkedListNodeInterface<T> {
-  value: T;
-  next?: LinkedListNode<T>;
-}
-
-export class LinkedListNode<T> implements LinkedListNodeInterface<T> {
-  constructor(public value: T, public next: LinkedListNode<T> = null) {}
 }
 
 export class LinkedList<T> implements LinkedListInterface<T> {
@@ -125,19 +118,17 @@ export class LinkedList<T> implements LinkedListInterface<T> {
 
   // public reverse(): void {
   //   let currentNode = this.head;
-  //   let previousNode: LinkedListNode<T> | null = null;
   //   let newHead: LinkedListNode<T> | null = null;
 
   //   while (currentNode) {
-  //     newHead = new LinkedListNode(currentNode.value, previousNode);
-  //     previousNode = newHead;
+  //     newHead = new LinkedListNode(currentNode.value, newHead);
   //     currentNode = currentNode.next;
   //   }
 
   //   this.head = newHead;
   // }
 
-  // without making: new LinkedListNode(currentNode.value, previousNode)
+  //! without making: new LinkedListNode(currentNode.value, previousNode). less memory. aka way better
   public reverse(): void {
     let prevNode = null;
     let nextNode = null;
