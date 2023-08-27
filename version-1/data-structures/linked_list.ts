@@ -15,7 +15,11 @@ export class LinkedList<T> implements LinkedListInterface<T> {
   public length: number = 0;
 
   constructor(public head: LinkedListNode<T>) {
-    this.length++;
+    let currentNode = this.head;
+    while (currentNode) {
+      this.length++;
+      currentNode = currentNode.next;
+    }
   }
 
   public print(): void {
@@ -133,6 +137,8 @@ export class LinkedList<T> implements LinkedListInterface<T> {
     let prevNode = null;
     let nextNode = null;
     let currentNode = this.head;
+
+    console.log(this.length);
 
     while (currentNode) {
       nextNode = currentNode.next;
