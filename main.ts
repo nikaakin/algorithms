@@ -1,24 +1,24 @@
-import { LinkedList, LinkedListNode, Queue } from "@/version-1";
+import { LinkedList, LinkedListNode, Queue, Stack } from "@/version-1";
 
-const list = new Queue(new LinkedListNode(1));
+const list = new Stack(null);
 
-list.print();
+list.printPrev();
 
 const t1 = performance.now();
 
-console.log(list.dequeue());
+console.log(list.pop());
 
 const t2 = performance.now();
-list.print();
+list.printPrev();
 
-console.log(list.enqueue(1111));
+console.log(list.push(1111));
 
-list.print();
+list.printPrev();
 
-console.log(list.enqueue(1111));
-list.print();
+console.log(list.push(123));
+list.printPrev();
 
-console.log(list.dequeue());
-list.print();
+console.log(list.pop());
+list.printPrev();
 
 console.log(`takes ${(t2 - t1) / 1000} seconds`);
