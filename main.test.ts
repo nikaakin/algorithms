@@ -1,3 +1,3 @@
-import { bubble_sort_test } from "@/tests";
+import { bubble_sort_test, stack_test } from "@/tests";
 
-bubble_sort_test();
+stack_test();
