@@ -1,17 +1,18 @@
-import { bubble_sort } from "@/version-1";
+// import { bubble_sort } from "@/version-1";
+import { bubbleSort } from "@/version-2";
 
 export const bubble_sort_test = () =>
   test("bubble-sort", function () {
     let arr = [9, 3, 7, 4, 69, 420, 42];
 
     debugger;
-    bubble_sort(arr);
+    bubbleSort(arr);
     expect(arr).toEqual([3, 4, 7, 9, 42, 69, 420]);
 
     arr = [9, 3, 7, 4, 69, 420, 42, 1];
 
     debugger;
-    bubble_sort(arr);
+    bubbleSort(arr);
     expect(arr).toEqual([1, 3, 4, 7, 9, 42, 69, 420]);
 
     arr = [
@@ -20,7 +21,7 @@ export const bubble_sort_test = () =>
     ];
 
     debugger;
-    bubble_sort(arr);
+    bubbleSort(arr);
     expect(arr).toEqual([
       0, 0, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4, 5, 5, 6, 6, 7, 7, 7, 8,
       9, 9, 10, 42, 69, 100, 420,

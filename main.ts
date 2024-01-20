@@ -1,16 +1,11 @@
-import {
-  LinkedList,
-  LinkedListNode,
-  Queue,
-  Stack,
-} from "@/version-1/data-structures";
+import { LinkedList, LinkedListNode, Queue, Stack } from "@/version-1";
 import {
   binary_search,
   binary_search_alt,
   bubble_sort,
   quick_sort,
   two_crystal_balls,
-} from "@/version-1/algorithms";
+} from "@/version-1";
 
 const t1 = performance.now();
 

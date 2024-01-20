@@ -7,4 +7,4 @@ import {
   two_crystal_balls_test,
 } from "@/tests";
 
-quick_sort_test();
+bubble_sort_test();
