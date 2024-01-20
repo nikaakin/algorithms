@@ -1,1 +1,2 @@
-export * from "./bubbleSort";
+export * from "./algorithms";
+export * from "./data-stuctures";
