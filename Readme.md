@@ -1,12 +1,12 @@
 ### Usage:
 
-- Open index.ts
+- Open main.ts
 - change `algName` with desirable algorithm and change import path
 - change `algInput` with required input (typescript will help you guess)
 - change `algPath` with path of the desired algorithm
 - run `npm start` and see your output on terminal
 
-#### test in index.ts by importing function and running like this:
+#### test in main.ts by importing function and running like this:
 
 ```
  import { algName } from "@/algPath";
@@ -20,7 +20,7 @@
 
 ### tests:
 
-- Test cases for each algorithm are in `tests` folder. Import test cases in `index.test.ts`.
+- Test cases for each algorithm are in `tests` folder. Import test cases in `main.test.ts`.
 - Run `npm test` to run tests.
 
 ```
