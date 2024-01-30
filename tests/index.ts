@@ -5,3 +5,4 @@ export * from "./bubble_sort";
 export * from "./stack";
 export * from "./quick_sort";
 export * from "./insertion_sort";
+export * from "./selection_sort";

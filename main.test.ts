@@ -6,6 +6,7 @@ import {
   quick_sort_test,
   two_crystal_balls_test,
   insertion_sort_test,
+  selection_sort_test,
 } from "@/tests";
 
-insertion_sort_test();
+selection_sort_test();
