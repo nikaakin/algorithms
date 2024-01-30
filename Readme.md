@@ -27,6 +27,7 @@
 import { demo } from "@/tests";
 
 demo();
+
 ```
 
 - alternatively, you can run `npm run test:watch` to run tests in watch mode.
