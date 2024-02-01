@@ -9,4 +9,4 @@ import {
   selection_sort_test,
 } from "@/tests";
 
-selection_sort_test();
+quick_sort_test();
