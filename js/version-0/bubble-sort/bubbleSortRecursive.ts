@@ -1,6 +1,6 @@
 // recursive
 
-export const bubbleSort = (arr: (number | string)[]) => {
+export const bubbleSortRec = (arr: (number | string)[]) => {
   let output: (number | string)[] = [];
 
   if (arr.length === 1) {
@@ -15,7 +15,7 @@ export const bubbleSort = (arr: (number | string)[]) => {
     }
     if (i === arr.length - 1) {
       const last = arr.pop() as number | string;
-      output = [...bubbleSort(arr), last];
+      output = [...bubbleSortRec(arr), last];
     }
   }
 

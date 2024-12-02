@@ -1,0 +1,16 @@
+{
+    "name": "nikatsutskiridze/algorithms",
+    "description": "practice algorithms",
+    "autoload": {
+        "psr-4": {
+            "Nikatsutskiridze\\Algorithms\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "nikaakin",
+            "email": "nikacuckiridze47@gmail.com"
+        }
+    ],
+    "require": {}
+}
